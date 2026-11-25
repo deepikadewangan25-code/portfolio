@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Deepika Dewangan · Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Caveat:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f5ef;--ink:#1d2433;--muted:#5d6577;--card:#fff;--line:#d9d5c8;--grid:#e8e4d8;--hl:#ffe27a;--a:#ff6b4a;--b:#3b6cff;--c:#2fb381;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161a24;--ink:#f1eee6;--muted:#a3abbd;--card:#1f2432;--line:#343b4f;--grid:#1d2230;--hl:#7a6a1d}}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:28px 28px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;margin:0}
+a{color:inherit}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:12px}
+nav b{font-family:Fraunces,Georgia,serif}
+nav div{display:flex;gap:16px;font-size:14px;overflow-x:auto}
+nav a{text-decoration:none;color:var(--muted);white-space:nowrap}
+nav a:hover{color:var(--ink)}
+.hero{padding:72px 0 40px}
+.tag{font-family:Caveat,cursive;font-size:24px;color:var(--a)}
+.hero h1{font-size:clamp(38px,8vw,68px);margin:6px 0 14px}
+mark{background:linear-gradient(transparent 55%,var(--hl) 55%);color:inherit}
+.hero p{max-width:560px;color:var(--muted);font-size:18px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-block;padding:10px 18px;border-radius:999px;border:2px solid var(--ink);text-decoration:none;font-weight:600;font-size:14px;background:var(--card);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.p{background:var(--ink);color:var(--bg)}
+.notes{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.note{position:relative;cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;transform:translate(var(--x,0px),var(--y,0px)) rotate(var(--r,0deg));animation:bob 4s ease-in-out infinite;padding:14px 16px;width:170px;font-family:Caveat,cursive;font-size:21px;line-height:1.2;color:#1d2433;box-shadow:3px 4px 0 rgba(0,0,0,.12)}
+.note:nth-child(1){background:#ffe27a;--r:-2deg}
+.note:nth-child(2){background:#ffc2b3;--r:1.5deg;animation-delay:-1s}
+.note:nth-child(3){background:#b7d0ff;--r:-1deg;animation-delay:-2s}
+.note:nth-child(4){background:#b6ecd3;--r:2deg;animation-delay:-3s}
+section{padding:46px 0}
+h2{font-size:clamp(28px,5vw,40px);margin-bottom:8px}
+.sub{color:var(--muted);margin:0 0 26px;max-width:620px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.card{background:var(--card);border:2px solid var(--ink);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:10px;box-shadow:5px 5px 0 var(--ink)}
+.card .k{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.card h3{font-size:22px}
+.card p{margin:0;font-size:15px}
+.tldr{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
+.chip{font-size:12px;padding:3px 10px;border-radius:999px;background:var(--grid);border:1px solid var(--line)}
+.proof{border-left:4px solid var(--c);padding-left:10px;font-size:14px;color:var(--muted)}
+.card .btn{align-self:flex-start;padding:7px 14px}
+.soon{border-style:dashed;box-shadow:none}
+.lab{background:var(--card);border:2px solid var(--ink);border-radius:16px;overflow:hidden}
+.tabs{display:flex;border-bottom:2px solid var(--ink)}
+.tabs button{flex:1;padding:12px;border:0;background:transparent;font:600 14px Inter,sans-serif;color:var(--muted);cursor:pointer;border-right:1px solid var(--line)}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--bg)}
+.pane{padding:20px;display:none;min-height:230px}
+.pane.on{display:block}
+pre{margin:0;font:15px/1.6 ui-monospace,Menlo,Consolas,monospace;overflow-x:auto}
+.flow{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:14px}
+.flow span{padding:6px 16px;border:2px solid var(--ink);background:var(--card)}
+.flow .oval{border-radius:999px}.flow .para{transform:skewX(-14deg)}
+.flow i{font-style:normal;color:var(--muted)}
+.blocks{display:flex;flex-direction:column;gap:4px;max-width:300px}
+.blocks span{padding:8px 14px;border-radius:8px;color:#1d2433;font-weight:600;font-size:14px}
+.cap{margin:14px 0 0;color:var(--muted);font-size:14px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;counter-reset:s}
+.step{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:16px;counter-increment:s}
+.step::before{content:counter(s);font:800 26px Fraunces,Georgia,serif;color:var(--a);display:block}
+.step b{display:block}
+.step span{font-size:14px;color:var(--muted)}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:28px}
+@media (max-width:720px){.about{grid-template-columns:1fr}}
+.about p{margin:0 0 14px}
+.facts{align-self:start;position:sticky;top:76px;background:var(--card);border:2px solid var(--ink);border-radius:16px;padding:20px;box-shadow:5px 5px 0 var(--ink);display:flex;flex-direction:column;gap:18px;font-size:14px}
+.facts div{display:block;padding:0;border:0}
+.facts em{display:block;font-style:normal;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.facts div>span{font-weight:600;font-size:15px;line-height:1.35}
+.facts .chips{margin:0;display:flex;flex-wrap:wrap;gap:6px}
+footer{padding:50px 0 60px;text-align:center}
+.report{display:inline-block;text-align:left;background:var(--card);border:2px solid var(--ink);border-radius:6px;padding:22px 28px;font:14px/1.7 ui-monospace,Menlo,Consolas,monospace;box-shadow:5px 5px 0 var(--ink);max-width:100%}
+.report hr{border:0;border-top:2px dashed var(--line);margin:8px 0}
+.small{color:var(--muted);font-size:13px;margin-top:18px}
+.tl{border-left:3px solid var(--ink);margin-left:8px;padding-left:24px;display:flex;flex-direction:column;gap:20px}
+.tl>div{position:relative}
+.tl>div::before{content:"";position:absolute;left:-35px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--a);border:3px solid var(--bg)}
+.tl small{color:var(--muted);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.tl b{display:block;font:600 18px Fraunces,Georgia,serif}
+.tl span{font-size:14px;color:var(--muted)}
+body{overflow-x:clip}
+@keyframes bob{0%,100%{translate:0 0}50%{translate:0 -6px}}
+@keyframes wig{0%,100%{rotate:0deg}25%{rotate:-7deg}75%{rotate:7deg}}
+@keyframes up{from{opacity:0;translate:0 18px}}
+.note.wig{animation:bob 4s ease-in-out infinite,wig .5s}
+.note.drag{z-index:4;cursor:grabbing;animation:none;box-shadow:8px 12px 0 rgba(0,0,0,.18)}
+.hero .wrap>*{animation:up .7s both}
+.hero .wrap>*:nth-child(2){animation-delay:.1s}
+.hero .wrap>*:nth-child(3){animation-delay:.2s}
+.hero .wrap>*:nth-child(4){animation-delay:.3s}
+.hero .wrap>*:nth-child(5){animation-delay:.4s}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .6s,transform .6s,box-shadow .2s}
+.rv.in{opacity:1;transform:none}
+.card:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink)}
+.chip{transition:transform .15s,background .15s}
+.chip:hover{transform:translateY(-2px) rotate(-2deg);background:var(--hl)}
+.tl>div::before{transition:transform .2s}
+.tl>div:hover::before{transform:scale(1.5)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--a);z-index:9}
+@media (prefers-reduced-motion:reduce){.note,.note.wig,.hero .wrap>*{animation:none!important}.rv{opacity:1!important;transform:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<nav><div class="wrap"><b>Deepika Dewangan</b><div><a href="#about">About</a><a href="#work">Projects</a><a href="#role">Responsibility</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></div></nav>
+
+<header class="hero"><div class="wrap">
+<div class="tag">student · maker · explainer</div>
+<h1>Hello, I’m <mark>Deepika</mark>.</h1>
+<p>I turn tricky ideas into pictures, animations and flowcharts, so learning feels less like memorising and more like seeing how things work.</p>
+<div class="btns"><a class="btn p" href="#work">See my projects</a><a class="btn" href="https://drive.google.com/file/d/1A2cyBshwzHzS3NT4CP6Na1P-IWSaTLKt/view?usp=sharing" target="_blank" rel="noopener">Resume ↗</a><a class="btn" href="https://www.linkedin.com/in/deepika-dewangan-417179448/" target="_blank" rel="noopener">LinkedIn ↗</a><a class="btn" href="https://github.com/deepikadewangan25-code" target="_blank" rel="noopener">GitHub ↗</a></div>
+<div class="notes">
+<div class="note">led activities for ~120 students</div>
+<div class="note">calm with conflicts &amp; crowds</div>
+<div class="note">learning Python &amp; data analysis</div>
+<div class="note">explaining ideas visually</div>
+<p class="cap" style="width:100%;margin:6px 0 0">psst… drag or click the sticky notes</p>
+</div>
+</div></header>
+
+<section id="about"><div class="wrap">
+<h2>About me</h2>
+<div class="about"><div>
+<p>I am a graduate student pursuing M.Com, with a background in Commerce and software programming from NavGurukul, Raigarh. I have a strong interest in technology, data analysis, programming, and understanding how things work.</p>
+<p>I enjoy exploring new subjects, taking on challenges, and learning by doing. I have been developing my skills in Python, Django, HTML, CSS. I enjoy working on projects that allow me to apply what I learn. Currently, I am developing Project Unheard, an anonymous writing feedback platform.</p>
+<p>Outside academics and technology, reading is something I genuinely enjoy. I like reading novels, manga, and webtoons, particularly fantasy, historical fiction, and stories with interesting plots and complex characters. I enjoy exploring different perspectives through the stories I read.</p>
+<p>I consider myself curious and self-driven, and I like exploring areas beyond my academic background. My long-term goal is to build a career in technology, strengthen my analytical and problem-solving abilities, and continue challenging myself to learn and grow. I am also interested in understanding the connection between technology, business, and data.</p>
+</div>
+<div class="facts"><div><em>Based in</em><span>Raigarh, Chhattisgarh</span></div><div><em>Studying</em><span>M.Com + Software Programming course</span></div><div><em>Tools</em><p class="chips"><span class="chip">Python</span><span class="chip">Scratch</span><span class="chip">Canva</span><span class="chip">HTML</span><span class="chip">CSS</span></p></div><div><em>Interested in</em><span>Creative learning</span></div></div></div>
+</div></section>
+
+<section id="work"><div class="wrap">
+<h2>Projects</h2>
+<p class="sub">Things I’ve made while learning. Each one shows how I learn, build and explain.</p>
+<div class="grid">
+<article class="card"><div class="k">Learning design · Python</div><h3>Learn Python with Scratch, flowcharts &amp; code</h3>
+<p>A Google Doc with 8 worked problems and cheat sheets that teach each idea three ways: Python, a flowchart and Scratch blocks. Every topic ends with Predict &amp; Fix and Practice.</p>
+<div class="proof">Shows: I can break a problem down and teach it clearly.</div>
+<div class="tldr"><span class="chip">8 worked problems</span><span class="chip">3 formats each</span><span class="chip">Predict &amp; Fix</span></div>
+<a class="btn" href="https://docs.google.com/document/d/11xXZhKjbNXCoLgQ8alEmJoZNpSe1diyHRFFgWHCOajA/edit" target="_blank" rel="noopener">Open the docs ↗</a></article>
+
+<article class="card"><div class="k">Animation · Made with AI help</div><h3>Explainer video with Manim &amp; edge-tts</h3>
+<p>An explainer video animated with Manim and narrated with edge-tts. I made it with the help of AI, after taking inspiration while exploring creative-learning ideas.</p>
+<div class="proof">Shows: I can use AI tools to turn an idea into a finished explainer.</div>
+<div class="tldr"><span class="chip">Manim</span><span class="chip">edge-tts</span><span class="chip">AI-assisted</span></div>
+<a class="btn" href="https://drive.google.com/file/d/1guwNIpRwPDUgRdCjgUTaex9Hyy-rUNs9/view?usp=sharing" target="_blank" rel="noopener">Watch the video ↗</a></article>
+
+<article class="card"><div class="k">Presentation · Canva</div><h3>Speed, Time &amp; Distance</h3>
+<p>A designed presentation that explains the relationship between speed, time and distance with clear visuals and examples.</p>
+<div class="proof">Shows: I can design for an audience and simplify maths.</div>
+<div class="tldr"><span class="chip">Canva</span><span class="chip">Visual design</span><span class="chip">Maths</span></div>
+<a class="btn" href="https://canva.link/k7ao6jvejk6v9gj" target="_blank" rel="noopener">View the slides ↗</a></article>
+
+<article class="card soon"><div class="k">In progress</div><h3>Unheard</h3>
+<p>My current project. Details and a link will go here once it’s ready to share.</p>
+<div class="tldr"><span class="chip">Work in progress</span></div></article>
+</div></div></section>
+
+<section id="role"><div class="wrap">
+<h2>Positions of responsibility</h2>
+<p class="sub">As a student at Navgurukul, I took on two campus roles. Both meant planning ahead, working with people and keeping things fair and fun.</p>
+<div class="grid">
+<article class="card"><div class="k">Navgurukul · Mar 2026 – Jul 2026</div><h3>Recreation Coordinator</h3>
+<ul style="margin:0;padding-left:18px;font-size:15px"><li>Planned and organised Sports Day, monthly celebrations and other recreational activities for around 120 students.</li><li>Coordinated campus events attended by government officials and guests, handling preparation, team coordination and on-ground work.</li><li>Encouraged student participation and supported an engaging campus environment.</li></ul>
+<div class="proof">Shows: planning, teamwork and leading groups.</div>
+<div class="tldr"><span class="chip">~120 students</span><span class="chip">Mar–Jul 2026</span><span class="chip">Certificate</span></div></article>
+<article class="card"><div class="k">Navgurukul · Oct 2025 – Feb 2026</div><h3>Discipline Coordinator</h3>
+<ul style="margin:0;padding-left:18px;font-size:15px"><li>Maintained discipline and made sure campus guidelines were followed during classes and activities.</li><li>Handled student conflicts and behavioural concerns through active listening and discussion.</li><li>Worked with the coordination team to keep the campus structured and respectful.</li></ul>
+<div class="proof">Shows: responsibility, calm under pressure and conflict resolution.</div>
+<div class="tldr"><span class="chip">Classes &amp; activities</span><span class="chip">Oct 2025–Feb 2026</span><span class="chip">Certificate</span></div></article>
+</div></div></section>
+
+<section id="journey"><div class="wrap">
+<h2>My student journey</h2>
+<p class="sub">From commerce to code.</p>
+<div class="tl">
+<div><small>2022 – 2025</small><b>Bachelor of Commerce</b><span>KMT Government Girls College, Raigarh (C.G.), affiliated with Shaheed Nandkumar Patel Vishwavidyalaya</span></div>
+<div><small>2025 – present</small><b>Master of Commerce</b><span>KMT Government Girls College, Raigarh (C.G.)</span></div>
+<div><small>2025 – present</small><b>Certification Course in Software Programming</b><span>Navgurukul Foundation for Social Welfare</span></div>
+<div><small>Now</small><b>Learning Python &amp; data analysis</b><span>Building projects to explain what I learn</span></div>
+</div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+<h2>Skills &amp; learning</h2>
+<p class="sub">My strengths come from the roles I’ve held and the projects above.</p>
+<div class="tldr" style="margin:0"><span class="chip">Adaptability</span><span class="chip">Communication</span><span class="chip">Teamwork</span><span class="chip">Conflict resolution</span><span class="chip">Analytical thinking</span><span class="chip">Python (basic)</span><span class="chip">Data analysis (learning)</span><span class="chip">Digital workspace</span><span class="chip">English</span><span class="chip">Hindi</span></div>
+<p class="cap">Certificates of Recognition from Navgurukul: <a href="https://drive.google.com/file/d/1FDtbqmzsK7ke4LIYZFipF-hsW9fUmVKY/view?usp=sharing" target="_blank" rel="noopener">Recreation Coordinator ↗</a> · <a href="https://drive.google.com/file/d/1WpVuTwdXoyOlH7Ig_9UhNH7cZDpcu1EB/view?usp=sharing" target="_blank" rel="noopener">Discipline Coordinator ↗</a></p>
+</div></section>
+
+<section id="interests"><div class="wrap">
+<h2>Beyond studies</h2>
+<p class="sub">The things I enjoy outside class. They keep me creative and calm.</p>
+<div class="notes" style="margin-top:0">
+<div class="note">reading books</div>
+<div class="note">mandala art</div>
+<div class="note">painting</div>
+</div>
+</div></section>
+
+<footer id="contact"><div class="wrap">
+<div class="report">
+<b>LAB REPORT · FINAL ENTRY</b>
+<hr>
+Experiment: learn by making<br>
+Result: 3 projects, 1 in progress<br>
+Next step: <b>keep learning</b>
+<hr>
+deepikadewangan25@navgurukul.org<br>
+<a href="https://drive.google.com/file/d/1A2cyBshwzHzS3NT4CP6Na1P-IWSaTLKt/view?usp=sharing" target="_blank" rel="noopener">Resume ↗</a> · <a href="https://www.linkedin.com/in/deepika-dewangan-417179448/" target="_blank" rel="noopener">LinkedIn ↗</a> · <a href="https://github.com/deepikadewangan25-code" target="_blank" rel="noopener">GitHub ↗</a>
+</div>
+<div class="small">© 2026 Deepika Dewangan</div>
+</div></footer>
+
+<script>
+(function(){
+var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if('IntersectionObserver' in window&&!rm){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('h2,.sub,.card,.step,.tl>div,.facts,.about>div:first-child,.report').forEach(function(el){el.classList.add('rv');io.observe(el)});
+}
+var bar=document.getElementById('bar'),de=document.documentElement;
+function sc(){var m=de.scrollHeight-de.clientHeight;bar.style.width=(m>0?de.scrollTop/m*100:0)+'%'}
+addEventListener('scroll',sc,{passive:true});sc();
+document.querySelectorAll('.note').forEach(function(n){
+  var sx=0,sy=0,ox=0,oy=0,moved=false,down=false;
+  n.addEventListener('pointerdown',function(e){down=true;moved=false;sx=e.clientX;sy=e.clientY;n.setPointerCapture(e.pointerId);n.classList.add('drag')});
+  n.addEventListener('pointermove',function(e){if(!down)return;var dx=e.clientX-sx,dy=e.clientY-sy;if(Math.abs(dx)+Math.abs(dy)>4)moved=true;n.style.setProperty('--x',(ox+dx)+'px');n.style.setProperty('--y',(oy+dy)+'px')});
+  function end(){if(!down)return;down=false;n.classList.remove('drag');ox=parseFloat(n.style.getPropertyValue('--x'))||0;oy=parseFloat(n.style.getPropertyValue('--y'))||0;if(!moved){n.classList.remove('wig');void n.offsetWidth;n.classList.add('wig')}}
+  n.addEventListener('pointerup',end);n.addEventListener('pointercancel',end);
+  n.addEventListener('animationend',function(e){if(e.animationName==='wig')n.classList.remove('wig')});
+});
+})();
+</script>
+</body>
+</html>
